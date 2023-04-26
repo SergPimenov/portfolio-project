@@ -1,13 +1,16 @@
+// const pages = document.querySelectorAll('.menu div');
+
 function setButtonBehavior(selector, event, callback) {
     const elem = document.querySelector(selector);
-    elem.addEventListener(event, callback)
+    elem.addEventListener(event, () => callback(selector));
 }
 
-function setAlert() {
-    alert('Обработка клика!')
+function setRedirect(selector) {
+    document.location = selector == '.mainPage' ?
+    '/' : `pages/${selector.replace(/\.|#/g, '')}.html`;
 }
-
-setButtonBehavior('.mainPage', 'click', setAlert);
-setButtonBehavior('.projects', 'click', setAlert);
-setButtonBehavior('.contacts', 'click', setAlert);
+    
+setButtonBehavior('.mainPage', 'click', setRedirect);
+setButtonBehavior('.projects', 'click', setRedirect);
+setButtonBehavior('.contacts', 'click', setRedirect);
 
