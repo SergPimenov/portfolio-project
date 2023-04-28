@@ -1,0 +1,82 @@
+* {
+    font-family: ui-serif
+}
+
+.menu {
+    position: relative;
+    width: 100vw;
+    height: 10vh;
+    padding: 2%;
+    align-items: center;
+}
+
+.menu div {
+    display: inline-block;
+    width: 31vw;
+    height: 9vh;
+    text-align: center;
+    background-color: rgb(17, 160, 17);
+    text-align: center;
+    font-size: 38px;
+    font-family: fantasy;
+    color: #fff;
+    cursor: default;
+}
+
+.menu div:hover {
+    background-color: green;
+}
+
+.mainText {
+    width: 31%;
+    height: 30%;
+    margin: 2%;
+    display: inline-block;
+}
+
+.mainPhoto {
+    display: inline-block;
+}
+
+.biography {
+    padding-left: 1%;
+}
+
+.footer {
+    padding-right: 3%;
+    padding-top: 3%;
+}
+
+.mainFooter {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container {
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #9aa29e;
+}
+
+.description {
+    width: 100%;
+    text-align: center;
+    background: #bcc6c1;
+}
+
+.change{
+    display: flex;
+}
+
+.outerBox {
+    display: flex;
+    border: black 3px solid;
+    width: 40%;
+}
+
+body {
+    background-color: #a3a5a4;
+}

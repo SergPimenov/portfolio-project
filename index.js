@@ -7,7 +7,7 @@ function setButtonBehavior(selector, event, callback) {
 
 function setRedirect(selector) {
     document.location = selector == '.mainPage' ?
-    '/' : `pages/${selector.replace(/\.|#/g, '')}.html`;
+    '/' : `/pages/${selector.replace(/\.|#/g, '')}.html`;
 }
     
 setButtonBehavior('.mainPage', 'click', setRedirect);
