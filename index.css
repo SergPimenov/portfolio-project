@@ -2,6 +2,10 @@
     font-family: ui-serif
 }
 
+li {
+    display: inline-block;
+}
+
 .menu {
     position: relative;
     width: 100vw;
@@ -160,6 +164,71 @@
     font-size: 30px;
     color: black;
     font-family: fantasy;
+}
+
+.toDoList .notes {
+    background: #fff;
+    height: 50vh;
+    width: 40vw;
+    border-radius: 5%;
+}
+
+#toDoListLabel {
+    font-size: 30px;
+    font-family: fantasy;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+
+.noteInput {
+    margin-top: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#newNoteInput {
+    width: 70%;
+    height: 5vh;
+}
+
+.createNote {
+    margin-left: 1vw;
+    height: 5vh;
+    width: 10vw;
+}
+
+.notesList .note {
+    display: flex;
+    justify-content: left;
+    margin-top: 1vh;
+}
+
+.notesList .note li {
+    display: flex;
+    justify-content: left;
+    font-size: 18px;
+}
+
+.notesList .note button {
+    margin-left: 1vw;
+}
+
+ul.notesList {
+    padding-top: 2vh;
+}
+
+.clearAllNotes {
+    margin-top: 1vh;
+    width: 100%;
+    height: 4vh;
+    text-align: center;
+}
+
+li:has(> input[ischecked="true"]) {
+    text-decoration: line-through;
 }
 
 body {
