@@ -1,4 +1,4 @@
-// const pages = document.querySelectorAll('.menu div');
+import { startFireworcks } from "./modules/fireworks"; 
 
 function setButtonBehavior(selector, event, callback) {
     const elem = document.querySelector(selector);
@@ -7,8 +7,12 @@ function setButtonBehavior(selector, event, callback) {
 
 function setRedirect(selector) {
     document.location = selector == '.mainPage' ?
-    '/' : `/pages/${selector.replace(/\.|#/g, '')}.html`;
+    '/dist/index.html' : `/pages/${selector.replace(/\.|#/g, '')}.html`;
 }
+
+try{
+startFireworcks();
+} catch {}
     
 setButtonBehavior('.mainPage', 'click', setRedirect);
 setButtonBehavior('.projects', 'click', setRedirect);
