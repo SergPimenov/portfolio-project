@@ -9,9 +9,11 @@
   "author": "Serg Pimenov",
   "license": "ISC",
   "dependencies": {
+    "animate.css": "^4.1.1",
     "fireworks-js": "^2.10.5"
   },
   "devDependencies": {
+    "css-loader": "^6.8.1",
     "webpack": "^5.85.0",
     "webpack-cli": "^5.1.1"
   }

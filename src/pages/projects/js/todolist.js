@@ -5,38 +5,30 @@ const clearAllButton = document.querySelector('.clearAllNotes');
 
 let notesArray = [];
 
+function pullDateInHtml(array) {
+    notesList.innerHTML = array.map(item => {
+        return `<div class="note">
+        <li><input type="checkbox" isChecked="false"><p class="noteValue" style="margin:0">${item}</p></li><button class="noteElementDelete">Удалить.</button>
+        </div>`;
+     }).join("");
+}
+
 function resetState() {
     const savedData = localStorage.getItem('notes');
-    if (savedData) {
-        const savedArray = savedData.split("*");
-        notesArray = [...savedArray];
+    if (!savedData) return
 
-        notesList.innerHTML = savedArray.map(item => {
-            return `<div class="note">
-            <li><input type="checkbox" isChecked="false"><p class="noteValue" style="margin:0">${item}</p></li><button class="noteElementDelete">Удалить.</button>
-            </div>`;
-        }).join("");
-    }
+    const savedArray = savedData.split("*");
+    notesArray = [...savedArray];
+    pullDateInHtml(savedArray);
 }
 
 function addNewNote() {
-    if (!newNoteInput.value.length) {
-        alert('Заполните поле ввода!');
-        return;
-    }
+    if (!newNoteInput.value.length) return;
 
     notesArray.push(newNoteInput.value);
-
-    notesList.innerHTML = notesArray.map(item => {
-        return `<div class="note">
-        <li><input type="checkbox" isChecked="false"><p class="noteValue" style="margin:0">${item}</p></li><button class="noteElementDelete">Удалить</button>
-        </div>`
-    }).join("");
-
+    pullDateInHtml(notesArray);
     newNoteInput.value = '';
-
     localStorage.setItem('notes', notesArray.join("*"));
-
 }
 
 function clearAllNotes() {
@@ -47,12 +39,9 @@ function clearAllNotes() {
 
 function changeNoteState(event) {
     const isChecked = event.target.getAttribute("isChecked");
-    if (isChecked === "true") {
-        event.target.setAttribute("isChecked", "false");
-    } else {
-        event.target.setAttribute("isChecked", "true");
+    isChecked ? event.target.setAttribute("isChecked", "false")
+        : event.target.setAttribute("isChecked", "true");
     }
-}
 
 function deleteSelectedElement(event) {
     if (event.target.className === 'noteElementDelete') {
