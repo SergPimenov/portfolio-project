@@ -1,3 +1,5 @@
+const { validateTime } = require('./utils/validateTime');
+
 const hoursElement = document.querySelector('.hours');
 const minutesElement = document.querySelector('.minutes');
 const secondsElement = document.querySelector('.seconds');
@@ -20,10 +22,10 @@ const monthMap = {
     '11' : 'декабря'
 }
 
-function validateTime(num) {
-    const correctNamber = num < 10 ? '0' + num : num ;
-    return correctNamber;
-}
+// function validateTime(num) {
+//     const correctNamber = num < 10 ? '0' + num : num ;
+//     return correctNamber;
+// }
 
 function setTime(){
     const currentTime = new Date();
